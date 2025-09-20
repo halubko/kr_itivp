@@ -1,0 +1,26 @@
+.completed {
+    background-color: #f8f9fa;
+}
+
+.priority-low { 
+    color: #28a745; 
+}
+
+.priority-medium { 
+    color: #ffc107; 
+}
+
+.priority-high { 
+    color: #dc3545; 
+}
+
+.table.rounded {
+    border-radius: 15px;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.btn-group {
+    gap: 5px;
+}
