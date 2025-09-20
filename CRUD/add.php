@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h1 class="text-center mb-4">Добавить новую задачу</h1>
                 
                 <div class="mb-3">
-                    <a href="index.php" class="btn btn-secondary">Назад к списку задач</a>
+                    <a href="/" class="btn btn-secondary">Назад к списку задач</a>
                 </div>
                 
                 <?php if (!empty($errors)): ?>

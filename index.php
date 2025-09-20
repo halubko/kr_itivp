@@ -57,7 +57,7 @@
                         <td><?php echo htmlspecialchars($created_at); ?></td>
                         <td>
                             <div class="btn-group" role="group">
-                                <a href="./CRUD/edit.php" class="btn btn-primary btn-sm">
+                                <a href="./CRUD/edit.php?id=<?php echo $task[0]; ?>" class="btn btn-primary btn-sm">
                                     Редактировать
                                 </a>
                                 
@@ -69,18 +69,12 @@
                                     </button>
                                 </form>
                                 
-                                <?php if (!$isCompleted): ?>
-                                    <form action="update_status.php" method="POST">
-                                        <input type="hidden" name="id" value="<?php echo $id; ?>">
-                                        <button type="submit" class="btn btn-success btn-sm">
-                                            Поменять статус
-                                        </button>
-                                    </form>
-                                <?php else: ?>
-                                    <button class="btn btn-danger btn-sm">
+                                <form action="update_status.php" method="POST">
+                                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                    <button type="submit" class="btn btn-success btn-sm">
                                         Поменять статус
                                     </button>
-                                <?php endif; ?>
+                                </form>
                             </div>
                         </td>
                     </tr>
@@ -88,7 +82,7 @@
             </tbody>
         </table>
         
-        <a href="add.php" class="btn btn-primary">Добавить новую задачу</a>
+        <a href="./CRUD/add.php" class="btn btn-primary">Добавить новую задачу</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
