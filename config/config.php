@@ -14,11 +14,11 @@
 
         mysqli_query($connect, $query);
 
-        echo("Table 'tasks' created");
+        error_log("Table 'tasks' created");
     } catch (mysqli_sql_exception $e) {
         if ($e->getCode() == 1050) {
-            echo "Table 'tasks' already exists";
+            error_log("Table 'tasks' already exists");
         } else {
-            echo "Connection error to MySQL: " . $e->getMessage();
+            error_log("Connection error to MySQL: " . $e->getMessage());
         }
     }
