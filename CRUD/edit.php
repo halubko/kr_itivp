@@ -17,7 +17,6 @@ if (!$task) {
     die("Задача не найдена");
 }
 
-// Обработка формы редактирования
 $errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = trim($_POST['title'] ?? '');

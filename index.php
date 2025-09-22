@@ -69,12 +69,9 @@
                                     </button>
                                 </form>
                                 
-                                <form action="update_status.php" method="POST">
-                                    <input type="hidden" name="id" value="<?php echo $id; ?>">
-                                    <button type="submit" class="btn btn-success btn-sm">
-                                        Поменять статус
-                                    </button>
-                                </form>
+                                <a href="./CRUD/update_status.php?id=<?php echo $task[0]; ?>" class="btn btn-success btn-sm">
+                                    Поменять статус
+                                </a>
                             </div>
                         </td>
                     </tr>
