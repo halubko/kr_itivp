@@ -20,6 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Название задачи не должно превышать 255 символов';
     }
     
+    if (strlen($description) > 1000) {
+        $errors[] = 'Описание задачи не должно превышать 1000 символов';
+    }
+    
     if (empty($errors)) {
         try {
             $query = "
@@ -68,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <h5>Ошибки:</h5>
                         <ul>
                             <?php foreach ($errors as $error): ?>
-                                <li><?php echo htmlspecialchars($error); ?></li>
+                                <li><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -78,14 +82,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="form-group">
                         <label for="title" class="form-label">Название задачи *</label>
                         <input type="text" class="form-control" id="title" name="title" 
-                               value="<?php echo isset($_POST['title']) ? htmlspecialchars($_POST['title']) : ''; ?>" 
+                               value="<?php echo isset($_POST['title']) ? htmlspecialchars($_POST['title'], ENT_QUOTES, 'UTF-8') : ''; ?>" 
                                required maxlength="255">
                     </div>
                     
                     <div class="form-group">
                         <label for="description" class="form-label">Описание задачи</label>
                         <textarea class="form-control" id="description" name="description" 
-                        rows="5"><?php echo isset($_POST['description']) ? htmlspecialchars($_POST['description']) : ''; ?></textarea>
+                        rows="5" maxlength="1000"><?php echo isset($_POST['description']) ? htmlspecialchars($_POST['description'], ENT_QUOTES, 'UTF-8') : ''; ?></textarea>
                     </div>
                     
                     <div class="row">
@@ -106,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="form-group">
                                 <label for="due_date" class="form-label">Срок выполнения</label>
                                 <input type="date" class="form-control" id="due_date" name="due_date" 
-                                value="<?php echo (isset($_POST['due_date']) ? htmlspecialchars($_POST['due_date']) : ''); ?>">
+                                value="<?php echo (isset($_POST['due_date']) ? htmlspecialchars($_POST['due_date'], ENT_QUOTES, 'UTF-8') : ''); ?>">
                             </div>
                         </div>
                         

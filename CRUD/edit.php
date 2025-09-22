@@ -26,12 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $due_date = $_POST['due_date'] ?? null;
 
     // Валидация данных
+    $errors = [];
+    
     if (empty($title)) {
         $errors[] = 'Название задачи обязательно для заполнения';
     }
     
     if (strlen($title) > 255) {
         $errors[] = 'Название задачи не должно превышать 255 символов';
+    }
+    
+    if (strlen($description) > 1000) {
+        $errors[] = 'Описание задачи не должно превышать 1000 символов';
     }
     
     if (empty($errors)) {
