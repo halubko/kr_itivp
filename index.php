@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h1 class="mb-4">Список задач</h1>
+        <h1 class="mb-4">Список дел (To-Do List)</h1>
         
         <table class="table table-striped table-hover rounded">
             <thead class="table-dark">
